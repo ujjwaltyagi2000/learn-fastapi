@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastAPI Blog | Pages</title>
+    <title>
+        {% if title %}
+        FastAPI Blog - {{title}}
+        {% else %}
+        FastAPI Blog
+        {% endif %}
+    </title>
 </head>
+
 <body>
     <h1>Posts</h1>
     {% for post in posts %}
-        <h2>{{ post.title }}</h2>
-        <small>By {{ post.author }} on {{ post.date_posted }}</small>
-        <p>{{ post.content }}</p>
+    <h2>{{ post.title }}</h2>
+    <small>By {{ post.author }} on {{ post.date_posted }}</small>
+    <p>{{ post.content }}</p>
     {% endfor%}
 
 </body>
+
 </html>

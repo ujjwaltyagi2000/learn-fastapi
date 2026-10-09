@@ -36,6 +36,7 @@ def get_posts():
 # embedding posts data in the template:
 @app.get("/blogs")
 def get_blogs(request: Request):
+    # return templates.TemplateResponse(request, "blogs.html", {"posts": posts, "title": "Blogs"})
     return templates.TemplateResponse(request, "blogs.html", {"posts": posts})
 
 # data is passed to the template as a dictionary, where the key is the variable name that will be used in the template, and the value is the data that will be used to enrich the template.
