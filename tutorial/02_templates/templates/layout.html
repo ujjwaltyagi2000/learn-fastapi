@@ -1,0 +1,29 @@
+<!-- This will be our parent template from which different child templates will inherit -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if title %}
+        FastAPI Blog - {{title}}
+        {% else %}
+        FastAPI Blog
+        {% endif %}
+    </title>
+</head>
+<!-- HTML portion till head will be the same for all child templates -->
+
+<!-- HTML portion after head will be different for different child templates -->
+<body>
+
+    {% block content %}
+    {% endblock content %}
+
+</body>
+<!-- the body defines a block called "content" which will be overridden by child templates -->
+<!-- we can make multiple such blocks -->
+
+</html>
